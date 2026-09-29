@@ -1,0 +1,57 @@
+:root{--primary:#0d9488;--bg:#0f172a;--card:#1e293b;--text:#f8fafc;--accent:#f59e0b;--muted:#94a3b8;--line:#334155}
+*{box-sizing:border-box;margin:0;padding:0;font-family:'Hind Siliguri',sans-serif}
+body{background:var(--bg);color:var(--text);padding-bottom:40px;line-height:1.5}
+.app-header{background:var(--primary);text-align:center;padding:16px 10px 10px;color:#fff}
+.app-header h1{font-size:22px}
+.progress-wrap{height:8px;background:rgba(255,255,255,.3);border-radius:8px;margin:10px auto 4px;max-width:400px;overflow:hidden}
+.progress-bar{height:100%;width:0;background:var(--accent);transition:width .4s}
+.nav-tabs{display:flex;overflow-x:auto;background:var(--card);border-bottom:2px solid var(--primary);position:sticky;top:0;z-index:5}
+.tab-btn{flex:1;min-width:110px;padding:12px 8px;background:none;border:none;color:var(--muted);font-size:14px;font-weight:600;cursor:pointer;white-space:nowrap}
+.tab-btn.active{color:#fff;border-bottom:4px solid var(--accent);background:#334155}
+.tab-btn.done::after{content:" ✓";color:#5eead4}
+.settings-bar{display:flex;gap:10px;align-items:center;flex-wrap:wrap;justify-content:center;padding:10px;font-size:14px;color:var(--muted)}
+.settings-bar select{background:var(--card);color:#fff;border:1px solid var(--line);border-radius:6px;padding:4px 6px;font-size:14px}
+.mini-btn{background:#7f1d1d;color:#fff;border:none;border-radius:6px;padding:6px 12px;font-size:14px;cursor:pointer}
+.container{max-width:800px;margin:10px auto;padding:0 15px}
+.step-content{display:none}.step-content.active{display:block}
+h2{color:var(--accent);margin-bottom:8px;font-size:20px}
+h3{color:#5eead4;margin:6px 0}
+.subtitle{color:var(--muted);margin-bottom:12px}
+.grid-container{display:grid;grid-template-columns:repeat(auto-fill,minmax(130px,1fr));gap:12px}
+.letter-card,.arabic-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;text-align:center;cursor:pointer;transition:transform .15s,border-color .15s}
+.letter-card:active,.arabic-card:active,.playing{transform:scale(.96);border-color:var(--accent)!important}
+.arabic{font-family:'Amiri',serif;font-size:38px;color:#5eead4;display:block;line-height:1.4}
+.bn-name{font-size:16px;font-weight:700;display:block}
+.makhraj-info{font-size:12px;color:#cbd5e1;display:block;margin-top:4px}
+.badge{display:inline-block;font-size:11px;background:#7c2d12;color:#fed7aa;border-radius:6px;padding:1px 6px;margin-top:4px}
+.card{background:var(--card);padding:16px;border-radius:12px;margin-bottom:14px;border-left:4px solid var(--primary)}
+.card p{margin:4px 0}
+.example-box{display:flex;gap:10px;margin-top:10px;flex-wrap:wrap}
+.example-box .arabic-card{min-width:110px;flex:1}
+.tabs-mini{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0}
+.chip{background:var(--card);color:#fff;border:1px solid var(--line);border-radius:20px;padding:6px 12px;cursor:pointer;font-size:14px}
+.chip.active{background:var(--primary);border-color:var(--primary)}
+.forms-table{width:100%;border-collapse:collapse;text-align:center;margin-top:8px}
+.forms-table th{color:var(--muted);font-size:13px;padding:6px}
+.forms-table td{border-top:1px solid var(--line);padding:4px}
+.forms-table .arabic{font-size:30px;display:inline}
+.tbl-wrap{overflow-x:auto}
+.dim{color:#64748b;font-size:13px}
+.quiz{margin-top:8px}
+.quiz .q{font-size:16px;margin-bottom:8px}
+.quiz .arabic{display:inline-block;font-size:48px}
+.opts{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.opt{background:#334155;color:#fff;border:2px solid transparent;border-radius:10px;padding:12px;font-size:16px;cursor:pointer}
+.opt.right{background:#065f46;border-color:#10b981}.opt.wrong{background:#7f1d1d;border-color:#ef4444}
+.score{color:var(--muted);font-size:14px;margin-top:8px}
+.done-btn{display:block;width:100%;margin:20px 0;padding:14px;border:none;border-radius:12px;background:var(--primary);color:#fff;font-size:17px;font-weight:700;cursor:pointer}
+.done-btn.done{background:#065f46}
+.note{background:#422006;color:#fde68a;border-radius:10px;padding:10px 12px;font-size:14px;margin:10px 0}
+.surah-selector select{width:100%;padding:12px;background:var(--card);color:#fff;border:1px solid var(--line);border-radius:8px;font-size:16px;margin-bottom:10px}
+.btn-row{display:flex;gap:8px;margin-bottom:12px}
+.btn{background:var(--primary);color:#fff;border:none;padding:10px 14px;border-radius:8px;cursor:pointer;font-size:15px}
+.ayah-box{background:var(--card);padding:14px;border-radius:10px;margin-bottom:12px;border:2px solid transparent}
+.ayah-text{font-family:'Amiri',serif;font-size:28px;line-height:2;text-align:right}
+.ayah-audio-btn{background:var(--primary);color:#fff;border:none;padding:6px 12px;border-radius:6px;cursor:pointer;margin-top:6px}
+.toast{position:fixed;left:50%;bottom:20px;transform:translateX(-50%);background:#0b1220;color:#fff;border:1px solid var(--line);padding:10px 16px;border-radius:10px;font-size:14px;opacity:0;pointer-events:none;transition:opacity .3s;max-width:90%;text-align:center}
+.toast.show{opacity:1}

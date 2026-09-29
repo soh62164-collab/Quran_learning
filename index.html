@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সহিহ কোরআন শিক্ষা</title>
+  <meta name="description" content="জিরো থেকে সহিহ শুদ্ধভাবে কোরআন তিলাওয়াত শেখার অ্যাপ">
+  <meta name="theme-color" content="#0d9488">
+  <link rel="manifest" href="manifest.json">
+  <link rel="icon" type="image/svg+xml" href="icons/favicon.svg">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header class="app-header">
+    <h1>📖 সহিহ কোরআন শিক্ষা</h1>
+    <p>জিরো থেকে ধাপে ধাপে বিশুদ্ধ তিলাওয়াত</p>
+    <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+    <small id="progressText"></small>
+  </header>
+
+  <nav class="nav-tabs" id="tabs">
+    <button class="tab-btn" data-step="1">১. মাখরাজ</button>
+    <button class="tab-btn" data-step="2">২. হরকত-তানভীন</button>
+    <button class="tab-btn" data-step="3">৩. মুরক্কাব</button>
+    <button class="tab-btn" data-step="4">৪. তাজবীদ</button>
+    <button class="tab-btn" data-step="5">৫. তিলাওয়াত চর্চা</button>
+  </nav>
+
+  <div class="settings-bar">
+    <label>গতি:
+      <select id="speedSel">
+        <option value="0.6">খুব ধীর</option>
+        <option value="0.8">ধীর</option>
+        <option value="1">স্বাভাবিক</option>
+      </select>
+    </label>
+    <label>পুনরাবৃত্তি:
+      <select id="repeatSel">
+        <option value="1">১ বার</option>
+        <option value="3">৩ বার</option>
+        <option value="5">৫ বার</option>
+      </select>
+    </label>
+    <button id="stopBtn" class="mini-btn">■ থামান</button>
+  </div>
+
+  <main class="container">
+    <section id="step1" class="step-content"></section>
+    <section id="step2" class="step-content"></section>
+    <section id="step3" class="step-content"></section>
+    <section id="step4" class="step-content"></section>
+    <section id="step5" class="step-content"></section>
+  </main>
+
+  <div id="toast" class="toast" role="status"></div>
+  <script src="app.js"></script>
+</body>
+</html>
