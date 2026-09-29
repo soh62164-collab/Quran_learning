@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সহিহ কোরআন শিক্ষা</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0d9488">
+  <!-- Arabic Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Hind+Siliguri:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- হেডার -->
+  <header class="app-header">
+    <h1>📖 সহিহ কোরআন শিক্ষা</h1>
+    <p>জিরো থেকে ধাপে ধাপে বিশুদ্ধ তিলাওয়াত</p>
+  </header>
+
+  <!-- নেভিগেশন ট্যাবস (৫টি ধাপ) -->
+  <nav class="nav-tabs">
+    <button class="tab-btn active" onclick="switchStep(1)">১. মাখরাজ</button>
+    <button class="tab-btn" onclick="switchStep(2)">২. হরকত-তানভীন</button>
+    <button class="tab-btn" onclick="switchStep(3)">৩. মুরক্কাব</button>
+    <button class="tab-btn" onclick="switchStep(4)">৪. তাজবীদ</button>
+    <button class="tab-btn" onclick="switchStep(5)">৫. তিলাওয়াত চর্চা</button>
+  </nav>
+
+  <main class="container">
+
+    <!-- ধাপ ১: আরবি বর্ণমালা ও মাখরাজ -->
+    <section id="step1" class="step-content active">
+      <h2>ধাপ ১: ২৯টি আরবি বর্ণমালা ও মাখরাজ (উচ্চারণ স্থান)</h2>
+      <p class="subtitle">যেকোনো হরফে ট্যাপ করে বাংলা উচ্চারণ, মাখরাজ ও শব্দ শুনুন:</p>
+      <div class="grid-container" id="letters-grid"></div>
+    </section>
+
+    <!-- ধাপ ২: হরকত, তানভীন ও প্রতীক -->
+    <section id="step2" class="step-content">
+      <h2>ধাপ ২: হরকত, তানভীন, সুকুন ও তাশদীদ</h2>
+      
+      <div class="card">
+        <h3>১. হরকত (জবর, জের, পেশ)</h3>
+        <p>হরকতের উচ্চারণ না টেনে দ্রুত পড়তে হয়।</p>
+        <div class="example-box">
+          <div class="arabic-card" onclick="speakArabic('بَ')"><span class="arabic">بَ</span><br><small>বা (জবর)</small></div>
+          <div class="arabic-card" onclick="speakArabic('بِ')"><span class="arabic">بِ</span><br><small>বি (জের)</small></div>
+          <div class="arabic-card" onclick="speakArabic('بُ')"><span class="arabic">بُ</span><br><small>বু (পেশ)</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>২. তানভীন (দুই জবর, দুই জের, দুই পেশ)</h3>
+        <p>তানভীনের উচ্চারণের মধ্যে একটি সুকুনযুক্ত 'নূন' (نْ) লুকিয়ে থাকে।</p>
+        <div class="example-box">
+          <div class="arabic-card" onclick="speakArabic('بً')"><span class="arabic">بً</span><br><small>বান (দুই জবর)</small></div>
+          <div class="arabic-card" onclick="speakArabic('بٍ')"><span class="arabic">بٍ</span><br><small>বিন (দুই জের)</small></div>
+          <div class="arabic-card" onclick="speakArabic('بٌ')"><span class="arabic">بٌ</span><br><small>বুন (দুই পেশ)</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>৩. সুকুন / জযম (textArabic{ْ}) ও তাশদীদ (textArabic{ّ})</h3>
+        <p>সুকুন জযমযুক্ত অক্ষরকে পূর্বের হরকতের সাথে মিলিয়ে পড়ে। তাশদীদযুক্ত অক্ষর দু'বার উচ্চারিত হয়।</p>
+        <div class="example-box">
+          <div class="arabic-card" onclick="speakArabic('أَبْ')"><span class="arabic">أَبْ</span><br><small>আব (সুকুন)</small></div>
+          <div class="arabic-card" onclick="speakArabic('أَبَّ')"><span class="arabic">أَبَّ</span><br><small>আব্‌বা (তাশদীদ)</small></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ধাপ ৩: অক্ষর যুক্ত করার নিয়ম (মুরক্কাব) -->
+    <section id="step3" class="step-content">
+      <h2>ধাপ ৩: মুরক্কাব (সংযুক্ত হরফ চেনার নিয়ম)</h2>
+      <p class="subtitle">আরবি শব্দে হরফগুলো কীভাবে যুক্ত হয় তা চিনে নিন:</p>
+      <div id="murakkab-container"></div>
+    </section>
+
+    <!-- ধাপ ৪: মৌলিক তাজবীদের নিয়ম -->
+    <section id="step4" class="step-content">
+      <h2>ধাপ ৪: মৌলিক তাজবীদের নিয়মাবলী</h2>
+      
+      <div class="card">
+        <h3>১. মাদ্দ (টেনে পড়া)</h3>
+        <p>মাদ্দের হরফ ৩টি: <strong>ا, و, ي</strong>। খালি আলিফের পূর্বে জবর, ওয়াও সাকিনের পূর্বে পেশ, এবং ইয়া সাকিনের পূর্বে জের থাকলে ১ আলিফ পরিমাণ টেনে পড়তে হয়।</p>
+        <div class="example-box">
+          <div class="arabic-card" onclick="speakArabic('بَا')"><span class="arabic">بَا</span><br><small>বাা (১ আলিফ)</small></div>
+          <div class="arabic-card" onclick="speakArabic('بُو')"><span class="arabic">بُو</span><br><small>বূূ (১ আলিফ)</small></div>
+          <div class="arabic-card" onclick="speakArabic('بِي')"><span class="arabic">بِي</span><br><small>বীী (১ আলিফ)</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>২. গুন্নাহ (ওয়াজিব গুন্নাহ ও ইখফা)</h3>
+        <p>নূন (ن) ও মীম (م) এ তাশদীদ থাকলে ওয়াজিব গুন্নাহ (নাক দিয়ে উচ্চারণ) করতে হয়।</p>
+        <div class="example-box">
+          <div class="arabic-card" onclick="speakArabic('إِنَّ')"><span class="arabic">إِنَّ</span><br><small>ইন্না (ওয়াজিব গুন্নাহ)</small></div>
+          <div class="arabic-card" onclick="speakArabic('ثُمَّ')"><span class="arabic">ثُمَّ</span><br><small>ছুম্মা (ওয়াজিব গুন্নাহ)</small></div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>৩. ওয়াকফ (থামার নিয়ম)</h3>
+        <p>আয়াতের শেষে বা থামার চিহ্নে থেমে শেষ হরফকে সুকুন (জযম) করতে হয়। যেমন: <code>الرَّحِيمِ</code> থামার সময় পড়া হবে <code>অর-রহীম</code>।</p>
+      </div>
+    </section>
+
+    <!-- ধাপ ৫: অডিও শুনে রিডিং চর্চা -->
+    <section id="step5" class="step-content">
+      <h2>ধাপ ৫: অডিও দেখে দেখে তিলাওয়াত চর্চা</h2>
+      <p class="subtitle">নিচের সুরাগুলো আয়াতের সাথে মিলিয়ে মনোযোগ দিয়ে শুনুন:</p>
+
+      <div class="surah-selector">
+        <label for="surahSelect">সুরা নির্বাচন করুন: </label>
+        <select id="surahSelect" onchange="loadSurah()">
+          <option value="1">১. সুরা আল-ফাতিহা</option>
+          <option value="112">১১২. সুরা আল-ইখলাস</option>
+          <option value="113">১১৩. সুরা আল-ফালাক</option>
+          <option value="114">১১৪. সুরা আন-নাস</option>
+        </select>
+      </div>
+
+      <div id="surah-content" class="surah-display"></div>
+    </section>
+
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>

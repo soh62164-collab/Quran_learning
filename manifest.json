@@ -1,0 +1,21 @@
+{
+  "name": "সহিহ কোরআন শিক্ষা",
+  "short_name": "কোরআন শিক্ষা",
+  "description": "জিরো থেকে সহিহ শুদ্ধভাবে কোরআন তিলাওয়াত শেখার পূর্ণাঙ্গ অ্যাপ",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#111827",
+  "theme_color": "#0d9488",
+  "icons": [
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3004/3004416.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://cdn-icons-png.flaticon.com/512/3004/3004416.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
